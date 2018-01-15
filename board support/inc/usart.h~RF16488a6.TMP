@@ -1,0 +1,19 @@
+#ifndef USART_H
+#define USART_H
+#include<stdint.h>
+#include"fifo.h"
+#define USART_FLOW_CONTROL 1   /*usart2 use flow control or not*/ 
+
+#ifndef Usart_Baudval
+#define Usart_Baudval  115200  /*usart`s baudrate*/
+#endif
+
+
+void usart_init(void);
+uint32_t usartx_init(uint32_t usart_periph);
+void usart_gpio_init(void);
+uint32_t USART_Send_BYTE(uint32_t usart_periph,int ch);
+void USART_Send_Array(uint32_t usart_periph,uint8_t array[],uint32_t len);
+void USART_Send_Str(uint32_t usart_periph,uint8_t *str);
+
+#endif

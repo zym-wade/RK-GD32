@@ -1,0 +1,22 @@
+#ifndef SPI_H
+#define SPI_H
+
+#include "gd32f1x0_gpio.h"
+#include"common.h"
+
+#ifndef SpiTxSize
+#define SpiTxSize  256
+#endif
+
+#ifndef SpiRxSize
+#define SpiRxSize  256
+#endif
+
+static gd32f1xx_spi_cmd spi_cmd; /*to receive the cmd*/
+static int8_t  DMATX[SpiTxSize];
+static int8_t  DMARX[SpiTxSize];
+int32_t spi0_init(void);
+int32_t SPI0_DMA_Configuration(void);
+
+
+#endif
